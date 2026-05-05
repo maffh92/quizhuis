@@ -1,0 +1,79 @@
+{
+  "id": "quiz-1",
+  "title": "Algemene Kennis",
+  "theme": { "primary": "#0ea5e9" },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Wat is de hoofdstad van Nederland?",
+      "timer": 15,
+      "points": 1000,
+      "content": {
+        "options": [
+          { "id": "o1", "label": "Amsterdam" },
+          { "id": "o2", "label": "Rotterdam" },
+          { "id": "o3", "label": "Den Haag" },
+          { "id": "o4", "label": "Utrecht" }
+        ],
+        "correctOptionId": "o1"
+      }
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "prompt": "De aarde draait om de zon.",
+      "timer": 10,
+      "points": 500,
+      "content": { "correct": true }
+    },
+    {
+      "id": "q3",
+      "type": "matching",
+      "prompt": "Match de landen aan hun hoofdsteden",
+      "timer": 30,
+      "points": 1500,
+      "content": {
+        "items": [
+          { "id": "item-0", "label": "België" },
+          { "id": "item-1", "label": "Duitsland" },
+          { "id": "item-2", "label": "Frankrijk" }
+        ],
+        "targets": [
+          { "id": "target-0", "label": "Berlijn" },
+          { "id": "target-1", "label": "Brussel" },
+          { "id": "target-2", "label": "Parijs" }
+        ],
+        "correctPairs": [
+          { "itemId": "item-0", "targetId": "target-1" },
+          { "itemId": "item-1", "targetId": "target-0" },
+          { "itemId": "item-2", "targetId": "target-2" }
+        ]
+      }
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Hoeveel planeten heeft ons zonnestelsel?",
+      "timer": 12,
+      "points": 800,
+      "content": {
+        "options": [
+          { "id": "o1", "label": "7" },
+          { "id": "o2", "label": "8" },
+          { "id": "o3", "label": "9" },
+          { "id": "o4", "label": "10" }
+        ],
+        "correctOptionId": "o2"
+      }
+    },
+    {
+      "id": "q5",
+      "type": "boolean",
+      "prompt": "Water kookt bij 90°C op zeeniveau.",
+      "timer": 10,
+      "points": 500,
+      "content": { "correct": false }
+    }
+  ]
+}
