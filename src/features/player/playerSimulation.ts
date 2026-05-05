@@ -14,8 +14,8 @@ const BOT_NAMES = [
   'TriviaTitan', 'SpeedDemon',
 ];
 
-function randomInRange(min: number, max: number): number {
-  return min + Math.random() * (max - min);
+function randomInRange(min: number, max: number, random: () => number = Math.random): number {
+  return min + random() * (max - min);
 }
 
 export function createPlayersForPreset(preset: PlayerPreset, humanPlayer: Player): Player[] {
@@ -34,15 +34,15 @@ export function createPlayersForPreset(preset: PlayerPreset, humanPlayer: Player
   return players;
 }
 
-function generateBotAnswer(question: Question, accuracy: number): unknown {
-  const isCorrect = Math.random() < accuracy;
+export function generateBotAnswer(question: Question, accuracy: number, random: () => number = Math.random): unknown {
+  const isCorrect = random() < accuracy;
 
   switch (question.type) {
     case 'multiple-choice': {
       const content = question.content as MultipleChoiceContent;
       if (isCorrect) return content.correctOptionId;
       const wrongOptions = content.options.filter((o) => o.id !== content.correctOptionId);
-      return wrongOptions[Math.floor(Math.random() * wrongOptions.length)]?.id ?? content.correctOptionId;
+      return wrongOptions[Math.floor(random() * wrongOptions.length)]?.id ?? content.correctOptionId;
     }
     case 'boolean': {
       const content = question.content as { correct: boolean };
@@ -56,7 +56,7 @@ function generateBotAnswer(question: Question, accuracy: number): unknown {
       // Shuffle some pairs for incorrect answer
       const shuffled = [...content.correctPairs];
       if (shuffled.length >= 2) {
-        const i = Math.floor(Math.random() * shuffled.length);
+        const i = Math.floor(random() * shuffled.length);
         const j = (i + 1) % shuffled.length;
         const temp = shuffled[i].targetId;
         shuffled[i] = { ...shuffled[i], targetId: shuffled[j].targetId };

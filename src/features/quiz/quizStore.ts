@@ -34,7 +34,7 @@ function getCurrentQuestion(state: QuizState): Question | null {
   return state.quiz.questions[state.currentQuestionIndex] ?? null;
 }
 
-function calculateScore(question: Question, answer: unknown, timeRemaining: number): number {
+export function calculateScore(question: Question, answer: unknown, timeRemaining: number): number {
   const { points, timer: totalTime, type, content } = question;
 
   if (type === 'matching') {
