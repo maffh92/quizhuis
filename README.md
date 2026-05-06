@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+# QuizHuis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Kahoot-style interactive quiz platform that runs entirely in the browser. One human player competes against configurable simulated opponents through a timed sequence of questions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Multiple question types** — multiple choice, true/false, and matching (drag items to targets)
+- **Simulated opponents** — play against bots with configurable accuracy and reaction speed
+- **Time-based scoring** — faster correct answers earn more points; minimum score is always 0
+- **Leaderboard after every question** — Kahoot-style podium showing
 
-## React Compiler
+## Modes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Mode | URL | Description |
+|------|-----|-------------|
+| Host Mode | `/` | Full controls — start, skip phases, reset. Ideal for projecting on a big screen. |
+| Player Mode | `/?mode=player` | Answer-only view without host controls. |
 
-## Expanding the ESLint configuration
+## Quizzes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Quizzes are defined as static JSON files in `public/quizzes/`. Drop a new JSON file there to add your own quiz — no backend required.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+React · TypeScript · Vite · Tailwind CSS · Zustand — runs entirely client-side.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
