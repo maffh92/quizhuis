@@ -1,35 +1,51 @@
 # AGENTS.md
 
-Global agent guidance for this repository.
+Agentic wiring only.
 
-## Repository structure
+## Routing
 
-- `.github/skills/`: Copilot skills and skill assets.
-- `.harness/`: harness runtime files (memory, session scratchpad, prompts, scripts).
-- `apps/quizhuis/`: the QuizHuis application (code, docs, plans, tests, build config).
-- Root is for repo-level conventions and future monorepo/harness infrastructure.
+- Product app workspace: `apps/quizhuis`
+- Skill catalog: `.github/skills`
+- Harness runtime: `.harness`
 
-## Working defaults
+## Skill-first policy
 
-- Treat `apps/quizhuis` as the current app workspace.
-- Run app commands from `apps/quizhuis`:
-  - `npm run lint`
-  - `npm run test`
-  - `npm run build`
-- Keep app-specific changes inside `apps/quizhuis` unless a change is explicitly repo-wide.
+Use dedicated skills for project behavior and conventions:
 
-## QuizHuis domain and language conventions
+- `software-development-best-practices`
+- `test-best-practices`
+- `ux-ui-best-practices`
+- `quizhuis-domain-language-structure`
+- `harness-how-it-works`
+- `documentation-writing-consistency`
+- `rpi.research`
+- `rpi.plan`
+- `rpi.implement`
+- `rpi.review`
+- `rpi.compound`
 
-- Code language: English.
-- UI language: Dutch.
-- Domain terms: `Quiz`, `Question`, `Phase`, `Player`, `Simulated Player`, `Player Preset`.
-- Scoring floor is always `0`.
-- Quiz data lives in `apps/quizhuis/public/quizzes/`.
+## Feature delivery orchestration (RPI + Review + Compound)
 
-## Harness/monorepo direction
+- If the user asks to build/add/implement a feature, run the full RPI + Review + Compound flow.
+- The main agent is an orchestrator and delegates each phase to a separate background agent.
+- Run phases in strict order:
+  1. `rpi.research`
+  2. `rpi.plan`
+  3. `rpi.implement`
+  4. `rpi.review`
+  5. `rpi.compound`
+- Wait for each background phase agent to finish before launching the next phase.
+- The orchestrator resolves required inputs and passes them to each RPI phase agent.
+- RPI outputs per feature folder:
+  - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
+  - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
+  - `apps/quizhuis/demo/<FEATURE_FOLDER>/implementation.md`
+- `rpi.review` writes feature-review findings to `.harness/memory/` (dated memory file).
+- `rpi.compound` reads feature memory findings and decides whether docs should be updated; if yes, it updates docs consistently across the repo.
+- Do not collapse phases into one run.
 
-- Keep Copilot skill discovery in `.github/skills`.
-- Keep harness runtime concerns in `.harness/`, separate from product code in `apps/`.
-- `session/` is local scratch space and ignored by git.
-- `memory/` is durable and versioned; `.harness/scripts/roll-harness-memory.sh` runs the Copilot CLI prompt in `.harness/prompt/compound.md`.
-- Run compounding manually for now (no git pre-commit hook).
+## Harness execution mode
+
+- Feature-flow compounding should use `rpi.compound`.
+- General memory maintenance should use the `ce-compound` skill.
+- Agents should run `ce-compound` after meaningful project changes and before final handoff.
