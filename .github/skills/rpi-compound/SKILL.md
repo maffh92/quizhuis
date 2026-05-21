@@ -1,6 +1,6 @@
 ---
 name: rpi.compound
-description: Reads feature review memory and determines whether repository documentation needs updates, then applies consistent doc changes when required. Use when the review phase is done and the feature workflow needs documentation compounding.
+description: Runs the compounding step after review PASS, deciding whether repository documentation needs updates and applying consistent doc changes when required. Use when review is complete and the feature workflow needs documentation compounding.
 ---
 
 # RPI Compound (QuizHuis)
@@ -8,11 +8,13 @@ description: Reads feature review memory and determines whether repository docum
 ## Quick start
 
 1. Receive orchestrator inputs (`FEATURE_FOLDER`, memory file path/date).
-2. Read the feature review entry in `.harness/memory/YYYY-MM-DD.md`.
-3. Invoke `software-development-best-practices` and keep documentation guidance aligned with KISS, minimalistic code, and clean code principles.
-4. Decide whether docs must be updated.
-5. If yes, update all relevant docs consistently.
-6. Record the compound decision back into `.harness/memory/YYYY-MM-DD.md`.
+2. Read `apps/quizhuis/demo/<FEATURE_FOLDER>/review.md`.
+3. Confirm review verdict is `PASS`.
+4. Read the feature review entry in `.harness/memory/YYYY-MM-DD.md`.
+5. Invoke `software-development-best-practices` and keep documentation guidance aligned with KISS, minimalistic code, and clean code principles.
+6. Decide whether docs must be updated.
+7. If yes, update all relevant docs consistently.
+8. Record the compound decision back into `.harness/memory/YYYY-MM-DD.md`.
 
 ## Decision logic
 
@@ -44,6 +46,7 @@ Update documentation when review findings include:
 
 ## Guardrails
 
+- If `review.md` verdict is `FAIL`, stop and route back to `rpi.implement`.
 - If docs are updated, keep edits scoped and precise.
 - Do not make unrelated code changes.
 - Preserve alignment with `documentation-writing-consistency` conventions.

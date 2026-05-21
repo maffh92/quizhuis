@@ -22,7 +22,7 @@ Build an implementation plan only (no code changes):
 
 1. prioritized task decomposition
 2. dependency notes
-3. acceptance criteria
+3. acceptance criteria (mark must-have vs nice-to-have)
 4. test strategy
 5. rollback plan
 
