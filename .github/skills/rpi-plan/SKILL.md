@@ -10,7 +10,8 @@ description: Executes the Plan phase of the QuizHuis RPI feature workflow and pr
 1. Read feature input from `apps/quizhuis/demo/00-feature-input.md`.
 2. Parse `FEATURE_REQUEST` and `FEATURE_FOLDER`.
 3. Read `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`.
-4. Produce exactly one file: `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`.
+4. Invoke `software-development-best-practices` and apply KISS, minimalistic code, and clean code principles to the plan.
+5. Produce exactly one file: `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`.
 
 ## Workflow
 
@@ -23,6 +24,7 @@ Build an implementation plan only (no code changes):
 5. rollback plan
 
 Focus on execution order and why each task is prioritized.
+Prefer the smallest complete implementation path that meets the request.
 
 ## Guardrails
 
@@ -30,3 +32,5 @@ Focus on execution order and why each task is prioritized.
 - Do not implement code in this phase.
 - Do not write `implementation.md` in this phase.
 - Plan must be actionable for the implementation phase agent.
+- If two plans satisfy requirements, choose the simpler one.
+- Remove tasks that add avoidable abstraction or scope creep.

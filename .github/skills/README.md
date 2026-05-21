@@ -2,7 +2,7 @@
 
 ## Project-specific engineering
 
-- **[software-development-best-practices](./software-development-best-practices/SKILL.md)** — Implementation quality guardrails for scoped changes, type safety, reuse, and validation.
+- **[software-development-best-practices](./software-development-best-practices/SKILL.md)** — Implementation quality guardrails with KISS, minimalistic code, and clean code principles.
 - **[test-best-practices](./test-best-practices/SKILL.md)** — Behavior-first testing guidelines for strategy, design, and reliability.
 - **[ux-ui-best-practices](./ux-ui-best-practices/SKILL.md)** — UX/UI heuristics for clarity, accessibility, and responsive interaction design.
 - **[quizhuis-domain-language-structure](./quizhuis-domain-language-structure/SKILL.md)** — Canonical QuizHuis domain language and repository structure conventions.

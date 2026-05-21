@@ -35,7 +35,10 @@ Use dedicated skills for project behavior and conventions:
   3. `rpi.implement`
   4. `rpi.review`
   5. `rpi.compound`
-- Each phase agent must invoke its corresponding skill first, then perform only that phase scope.
+- Each phase agent must invoke its corresponding phase skill first.
+- Each phase agent must then invoke `software-development-best-practices` before doing phase work.
+- All phase agents must apply KISS, minimalistic code, and clean code principles in recommendations and code changes.
+- If a proposed approach adds avoidable complexity, simplify it before proceeding.
 - Wait for each background phase agent to finish before launching the next phase.
 - The orchestrator resolves required inputs and passes them to each RPI phase agent.
 - RPI outputs per feature folder:

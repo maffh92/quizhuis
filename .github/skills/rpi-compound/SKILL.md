@@ -9,9 +9,10 @@ description: Reads feature review memory and determines whether repository docum
 
 1. Receive orchestrator inputs (`FEATURE_FOLDER`, memory file path/date).
 2. Read the feature review entry in `.harness/memory/YYYY-MM-DD.md`.
-3. Decide whether docs must be updated.
-4. If yes, update all relevant docs consistently.
-5. Record the compound decision back into `.harness/memory/YYYY-MM-DD.md`.
+3. Invoke `software-development-best-practices` and keep documentation guidance aligned with KISS, minimalistic code, and clean code principles.
+4. Decide whether docs must be updated.
+5. If yes, update all relevant docs consistently.
+6. Record the compound decision back into `.harness/memory/YYYY-MM-DD.md`.
 
 ## Decision logic
 

@@ -12,8 +12,9 @@ description: Reviews outputs and code from RPI feature phases, identifies improv
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/implementation.md`
-3. Review delivered work quality and improvement opportunities.
-4. Write findings to `.harness/memory/YYYY-MM-DD.md`.
+3. Invoke `software-development-best-practices` and apply KISS, minimalistic code, and clean code principles as review lenses.
+4. Review delivered work quality and improvement opportunities.
+5. Write findings to `.harness/memory/YYYY-MM-DD.md`.
 
 ## Review focus
 
@@ -23,6 +24,7 @@ description: Reviews outputs and code from RPI feature phases, identifies improv
 4. Testing quality: coverage relevance and confidence gaps.
 5. UX/UI fit: consistency with expected user flow.
 6. Improvement opportunities: quick wins vs deferred items.
+7. Simplicity audit: where complexity can be reduced while preserving requested behavior.
 
 ## Output requirements
 

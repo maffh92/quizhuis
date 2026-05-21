@@ -9,8 +9,9 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
 
 1. Read feature input from `apps/quizhuis/demo/00-feature-input.md`.
 2. Parse `FEATURE_REQUEST` and `FEATURE_FOLDER`.
-3. Create `apps/quizhuis/demo/<FEATURE_FOLDER>/` if missing.
-4. Produce exactly one file: `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`.
+3. Invoke `software-development-best-practices` and apply KISS, minimalistic code, and clean code principles to recommendations.
+4. Create `apps/quizhuis/demo/<FEATURE_FOLDER>/` if missing.
+5. Produce exactly one file: `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`.
 
 ## Workflow
 
@@ -39,3 +40,4 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
 - Do not ask for `FEATURE_REQUEST` / `FEATURE_FOLDER` again.
 - Do not write code in this phase.
 - Do not create `plan.md` or `implementation.md` in this phase.
+- Prefer the simplest viable implementation direction; avoid speculative complexity.
