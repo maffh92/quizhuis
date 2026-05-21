@@ -58,8 +58,12 @@ Required outputs per feature:
 5. Return concise final status with phase outcomes, artifact paths, and blockers (if any).
 6. Validate artifact completeness before advancing:
    - the latest appended design-review-cycle section in `design-review.md` contains explicit PASS/FAIL gate + required changes.
-   - `implementation.md` contains acceptance-criteria verification evidence.
-   - the latest appended review-cycle section in `review.md` contains must-have verification evidence + explicit PASS/FAIL gate.
+   - `implementation.md` contains acceptance-criteria verification evidence with evidence types and traces.
+   - the latest appended review-cycle section in `review.md` contains must-have verification evidence (criterion -> evidence type -> evidence trace -> result) + explicit PASS/FAIL gate.
 7. Reject/loop any phase output that claims success without required verification evidence.
 8. Use the latest appended design-review-cycle section in `design-review.md` and latest appended review-cycle section in `review.md` as the active gate state.
 9. Reject/loop review outputs with `FAIL` verdicts that do not map blockers to unmet must-have criteria or critical risks.
+10. Reject/loop `PASS` review outputs when any interactive must-have criterion is supported only by code-inspection evidence.
+11. Require primary user-flow evidence in `review.md` to reference executable proof (automated test artifact and/or deterministic manual run with observed result).
+12. When implementation touches UI/controller/state/routing/network files, require at least one automated integration-style evidence reference for the primary flow in `review.md`; otherwise loop with required fixes.
+13. Reject/loop review outputs that do not use append-only review-cycle formatting (`## Review Cycle: <ISO-8601 timestamp>`).

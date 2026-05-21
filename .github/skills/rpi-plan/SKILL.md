@@ -28,6 +28,9 @@ Build an implementation plan only (no code changes):
 
 Focus on execution order and why each task is prioritized.
 Prefer the smallest complete implementation path that meets the request.
+Test strategy must map every must-have criterion to planned verification evidence (`unit-test`, `integration-test`, `manual-run`) and where that evidence will be produced (file path and/or command).
+Treat criteria involving multi-step user interaction, cross-component/state transitions, navigation/deep-linking, or async/network behavior as interactive must-haves; default these to automated integration coverage.
+Use manual-only verification for interactive must-haves only when automation is truly infeasible, and document why plus a deterministic manual script.
 
 ## Guardrails
 
@@ -37,4 +40,6 @@ Prefer the smallest complete implementation path that meets the request.
 - Plan must be actionable for the implementation phase agent.
 - If two plans satisfy requirements, choose the simpler one.
 - Remove tasks that add avoidable abstraction or scope creep.
+- Do not leave must-have criteria without an executable verification path.
+- If an interactive must-have cannot be automated, require explicit manual steps and expected outcomes in the plan.
 - If the latest design-review-cycle verdict in `design-review.md` is `FAIL`, stop and route back to `rpi.research` with required changes.
