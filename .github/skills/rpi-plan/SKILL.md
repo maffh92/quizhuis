@@ -9,9 +9,12 @@ description: Executes the Plan phase of the QuizHuis RPI feature workflow and pr
 
 1. Read feature input from `apps/quizhuis/demo/00-feature-input.md`.
 2. Parse `FEATURE_REQUEST` and `FEATURE_FOLDER`.
-3. Read `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`.
-4. Invoke `software-development-best-practices` and apply KISS, minimalistic code, and clean code principles to the plan.
-5. Produce exactly one file: `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`.
+3. Read:
+   - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
+   - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md`
+4. Confirm `design-review.md` verdict is `PASS`.
+5. Invoke `software-development-best-practices` and apply KISS, minimalistic code, and clean code principles to the plan.
+6. Produce exactly one file: `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`.
 
 ## Workflow
 
@@ -34,3 +37,4 @@ Prefer the smallest complete implementation path that meets the request.
 - Plan must be actionable for the implementation phase agent.
 - If two plans satisfy requirements, choose the simpler one.
 - Remove tasks that add avoidable abstraction or scope creep.
+- If `design-review.md` verdict is `FAIL`, stop and route back to `rpi.research` with required changes.

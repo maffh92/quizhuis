@@ -19,36 +19,41 @@ Use dedicated skills for project behavior and conventions:
 - `harness-how-it-works`
 - `documentation-writing-consistency`
 - `rpi.research`
+- `rpi.design-review`
 - `rpi.plan`
 - `rpi.implement`
 - `rpi.review`
 - `rpi.compound`
 
-## Feature delivery orchestration (RPI + Review + Compound)
+## Feature delivery orchestration (RPI + Design Review + Review + Compound)
 
-- If the user asks to build/add/implement a feature, run the full RPI + Review + Compound flow.
+- If the user asks to build/add/implement a feature, run the full RPI + Design Review + Review + Compound flow.
 - The main agent is an orchestrator and must not execute phase work itself.
 - For each phase, spawn a separate background agent (one phase per agent) via the Copilot CLI sub-agent/task flow (`/tasks`), using background execution (`mode: "background"`).
 - Run phases in strict order:
   1. `rpi.research`
-  2. `rpi.plan`
-  3. `rpi.implement`
-  4. `rpi.review`
-  5. `rpi.compound`
+  2. `rpi.design-review`
+  3. `rpi.plan`
+  4. `rpi.implement`
+  5. `rpi.review`
+  6. `rpi.compound`
 - Each phase agent must invoke its corresponding phase skill first.
 - Each phase agent must then invoke `software-development-best-practices` before doing phase work.
+- `rpi.research` and `rpi.design-review` phase agents must also invoke `ux-ui-best-practices` before phase work.
 - All phase agents must apply KISS, minimalistic code, and clean code principles in recommendations and code changes.
 - If a proposed approach adds avoidable complexity, simplify it before proceeding.
 - Wait for each background phase agent to finish before launching the next phase.
 - The orchestrator resolves required inputs and passes them to each RPI phase agent.
 - RPI outputs per feature folder:
   - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
+  - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md`
   - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
   - `apps/quizhuis/demo/<FEATURE_FOLDER>/implementation.md`
 - `rpi.review` writes feature-review findings to `.harness/memory/` (dated memory file).
 - `rpi.compound` reads feature memory findings and decides whether docs should be updated; if yes, it updates docs consistently across the repo.
 - Phase gates:
-  - Do not start `rpi.plan` before `research.md` exists.
+  - Do not start `rpi.design-review` before `research.md` exists.
+  - Do not start `rpi.plan` before `design-review.md` exists with `PASS`.
   - Do not start `rpi.implement` before `plan.md` exists.
   - Do not start `rpi.review` before `implementation.md` exists.
   - Do not start `rpi.compound` before review findings are present in `.harness/memory/`.
@@ -57,6 +62,7 @@ Use dedicated skills for project behavior and conventions:
   - After launching a phase agent, report waiting and stop tool use until completion notification.
   - Confirm launched phase agents are visible in `/tasks` before proceeding.
   - On completion, read the background agent result (`read_agent`) and only then proceed.
+  - If `rpi.design-review` returns `FAIL`, loop back to `rpi.research` with required changes from `design-review.md`.
   - If a phase fails, stop the flow and report the blocker instead of skipping ahead.
 - Do not collapse phases into one run.
 

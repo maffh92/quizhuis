@@ -9,9 +9,10 @@
 - **[harness-how-it-works](./harness-how-it-works/SKILL.md)** — How the local harness directories, memory lifecycle, and compounding flow work.
 - **[documentation-writing-consistency](./documentation-writing-consistency/SKILL.md)** — Update relevant docs across the repo and keep terminology, paths, and behavior descriptions consistent.
 
-## Feature delivery flow (RPI + Review + Compound)
+## Feature delivery flow (RPI + Design Review + Review + Compound)
 
 - **[rpi-research](./rpi-research/SKILL.md)** — Research phase for feature requests, producing `research.md` with validated claims and system fit.
+- **[rpi-design-review](./rpi-design-review/SKILL.md)** — Design gate after research, producing `design-review.md` with PASS/FAIL and required simplifications before planning.
 - **[rpi-plan](./rpi-plan/SKILL.md)** — Planning phase for feature requests, producing `plan.md` from research artifacts.
 - **[rpi-implement](./rpi-implement/SKILL.md)** — Implementation phase for feature requests, producing code changes and `implementation.md`.
 - **[rpi-review](./rpi-review/SKILL.md)** — Reviews research/plan/implementation results and writes improvement findings to harness memory.
