@@ -22,7 +22,7 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
    - identify actor/action/object/observable outcome per requirement
 2. Analyze:
    - user value
-   - pragmatic architecture fit for the requested outcome
+   - architecture fit for requested outcomes and future evolution
    - likely data model/state changes
    - UX impact
    - top technical risks
@@ -51,3 +51,4 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
 - Prefer the simplest viable implementation direction; avoid speculative complexity.
 - Do not weaken or reinterpret explicit requested outcomes.
 - If ambiguity remains, document it under assumptions/ambiguities; do not silently choose a narrower scope than the request implies.
+- Explicitly choose an architecture direction that satisfies requested outcomes now and avoids dead-end choices for likely future expansion.

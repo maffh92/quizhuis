@@ -1,6 +1,6 @@
 # Frontend-only architecture with static quiz data
 
-**Status:** Superseded by [0005-pragmatic-architecture-fit](0005-pragmatic-architecture-fit.md)
+**Status:** Superseded by [0005-outcome-driven-architecture-fit](0005-outcome-driven-architecture-fit.md)
 
 QuizHuis runs entirely in the browser with no backend. Quiz data is loaded from static JSON files (`public/quizzes/*.json`) via `fetch()`. Player simulation, scoring, and game flow all happen client-side.
 

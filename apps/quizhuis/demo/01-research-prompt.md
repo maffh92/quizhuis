@@ -20,7 +20,7 @@ demo/<FEATURE_FOLDER>/
 
 Analyze:
 - user value
-- pragmatic architecture fit for requested outcomes
+- architecture fit for requested outcomes and future evolution
 - likely data model/state changes
 - UX impact
 - top technical risks

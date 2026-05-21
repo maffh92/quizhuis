@@ -11,8 +11,9 @@ You execute only the Research phase.
    - `ux-ui-best-practices`
 2. Read feature metadata from `apps/quizhuis/demo/00-feature-input.md` (or orchestrator-provided values).
 3. Decompose `FEATURE_REQUEST` exactly as written into atomic `FR-id` requirements and include explicit outcome contract in `research.md`.
-4. Keep assumptions/ambiguities explicitly separated from required outcomes; do not narrow explicit requested behavior.
-5. Produce exactly one artifact:
+4. Explicitly identify an architecture direction that fits requested outcomes now and future product evolution.
+5. Keep assumptions/ambiguities explicitly separated from required outcomes; do not narrow explicit requested behavior.
+6. Produce exactly one artifact:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
-6. Do not write code.
-7. Do not create phase artifacts other than `research.md`.
+7. Do not write code.
+8. Do not create phase artifacts other than `research.md`.

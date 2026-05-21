@@ -1,4 +1,4 @@
-# Pragmatic architecture fit for requested outcomes
+# Outcome-driven architecture fit for requested outcomes
 
 QuizHuis is frontend-first by default, but architecture decisions must fit the requested feature outcomes. A feature can remain frontend-only, use a hybrid split, or add backend responsibilities when required to satisfy explicit behavior.
 
