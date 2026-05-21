@@ -20,7 +20,7 @@ demo/<FEATURE_FOLDER>/
 
 Analyze:
 - user value
-- fit with the current frontend-only architecture
+- pragmatic architecture fit for requested outcomes
 - likely data model/state changes
 - UX impact
 - top technical risks
