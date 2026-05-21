@@ -28,7 +28,7 @@ Use dedicated skills for project behavior and conventions:
 
 - If the user asks to build/add/implement a feature, run the full RPI + Review + Compound flow.
 - The main agent is an orchestrator and must not execute phase work itself.
-- For each phase, spawn a separate background agent (one phase per agent) using the task tool (`mode: "background"`).
+- For each phase, spawn a separate background agent (one phase per agent) via the Copilot CLI sub-agent/task flow (`/tasks`), using background execution (`mode: "background"`).
 - Run phases in strict order:
   1. `rpi.research`
   2. `rpi.plan`
@@ -53,7 +53,9 @@ Use dedicated skills for project behavior and conventions:
   - Do not start `rpi.review` before `implementation.md` exists.
   - Do not start `rpi.compound` before review findings are present in `.harness/memory/`.
 - Runtime behavior:
+  - Use Copilot CLI task/sub-agent orchestration for phase spawning; do not run phase work directly inside the orchestrator turn.
   - After launching a phase agent, report waiting and stop tool use until completion notification.
+  - Confirm launched phase agents are visible in `/tasks` before proceeding.
   - On completion, read the background agent result (`read_agent`) and only then proceed.
   - If a phase fails, stop the flow and report the blocker instead of skipping ahead.
 - Do not collapse phases into one run.
