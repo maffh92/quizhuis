@@ -23,8 +23,9 @@ Build an implementation plan only (no code changes):
 1. prioritized task decomposition
 2. dependency notes
 3. acceptance criteria (mark must-have vs nice-to-have)
-4. test strategy
-5. rollback plan
+4. feature coverage matrix (`FR-id` -> planned tasks -> verification evidence)
+5. test strategy
+6. rollback plan
 
 Focus on execution order and why each task is prioritized.
 Prefer the smallest complete implementation path that meets the request.
@@ -42,4 +43,6 @@ Use manual-only verification for interactive must-haves only when automation is 
 - Remove tasks that add avoidable abstraction or scope creep.
 - Do not leave must-have criteria without an executable verification path.
 - If an interactive must-have cannot be automated, require explicit manual steps and expected outcomes in the plan.
+- Every `FR-id` from `research.md` must be mapped in the feature coverage matrix before planning can pass.
+- Do not introduce scope that is not traceable to request decomposition, required fixes, or explicit risk mitigation.
 - If the latest design-review-cycle verdict in `design-review.md` is `FAIL`, stop and route back to `rpi.research` with required changes.

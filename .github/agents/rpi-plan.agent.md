@@ -12,8 +12,9 @@ You execute only the Plan phase.
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md` (use the latest appended design-review-cycle section)
 3. Continue only when the latest design-review-cycle verdict is `PASS`.
-4. Ensure plan test strategy maps every must-have criterion to explicit evidence strategy and traces.
+4. Ensure plan includes feature coverage matrix mapping every `FR-id` from `research.md` to planned tasks and verification evidence.
+5. Ensure plan test strategy maps every must-have criterion to explicit evidence strategy and traces.
    - Interactive must-haves (multi-step user flows/state transitions/navigation or async/network behavior) should default to automated integration coverage.
-5. Produce exactly one artifact:
+6. Produce exactly one artifact:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
-6. Do not write code.
+7. Do not write code.

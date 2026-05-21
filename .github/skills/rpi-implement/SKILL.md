@@ -31,6 +31,7 @@ description: Executes the Implement phase from approved research/design/plan art
 - Run relevant tests after changes and fix regressions you introduce.
 - Run project quality checks from `apps/quizhuis` (`npm run lint && npm run test && npm run build`) before concluding implementation.
 - Map each must-have acceptance criterion to executable verification evidence.
+- Map each `FR-id` from `research.md` decomposition to concrete implementation handling and evidence.
 - For interactive must-haves (multi-step user actions, cross-component/state wiring, navigation/deep-linking, async/network behavior), add or update automated integration-style tests; code inspection may supplement but cannot be sole evidence.
 - If automation is truly infeasible for an interactive must-have, include deterministic manual validation steps + expected outcomes + rationale in `implementation.md`.
 - Validate the primary user flow with executable evidence before concluding implementation.
@@ -49,6 +50,7 @@ description: Executes the Implement phase from approved research/design/plan art
 5. test/build results (commands + outcomes)
 6. remaining risks, limitations, or deferred items
 7. review-loop reconciliation (if applicable): required fixes from the latest review cycle in `review.md` -> resolution status -> evidence
+8. feature-request traceability table (`FR-id` -> implementation handling -> evidence)
 
 ## Guardrails
 
@@ -58,4 +60,5 @@ description: Executes the Implement phase from approved research/design/plan art
 - If any must-have acceptance criterion is unmet, do not report the phase as complete; list blockers and required fixes.
 - Do not mark interactive must-have criteria as satisfied using only code inspection.
 - If required executable evidence for an interactive must-have is missing, report `FAIL` and list the missing tests/validation steps.
+- If any `FR-id` from `research.md` is unimplemented or lacks evidence, report `FAIL` and list required fixes.
 - If review-driven rework regresses a previously passing must-have criterion, report `FAIL` and list the regression explicitly.

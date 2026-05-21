@@ -18,6 +18,7 @@ description: Reviews the RPI research artifact and produces a pass/fail design g
 
 1. Evaluate request/design alignment:
    - user request coverage
+   - explicit `FR-id` coverage from `research.md` decomposition
    - architecture fit with pragmatic tradeoffs
    - data/state/flow clarity
    - UX flow clarity and accessibility fit
@@ -41,11 +42,12 @@ description: Reviews the RPI research artifact and produces a pass/fail design g
 3. The newly appended design-review-cycle section must include:
    1. verdict (`PASS` or `FAIL`)
    2. concise design summary
-   3. approved elements
-   4. blocking issues (if any)
-   5. required changes before planning
-   6. complexity reduction recommendations
-   7. next-step instruction:
+   3. request-coverage matrix (`FR-id` -> design handling -> status)
+   4. approved elements
+   5. blocking issues (if any)
+   6. required changes before planning
+   7. complexity reduction recommendations
+   8. next-step instruction:
       - `PASS` -> proceed to `rpi.plan`
       - `FAIL` -> return to `rpi.research` with listed required changes
 4. The latest appended design-review-cycle section is the source of truth for planning/orchestration decisions.
@@ -56,3 +58,4 @@ description: Reviews the RPI research artifact and produces a pass/fail design g
 - Do not modify `research.md` directly; review it and issue guidance in `design-review.md`.
 - Keep findings concrete and actionable.
 - Never overwrite or delete previous design-review-cycle sections in `design-review.md`.
+- If `research.md` lacks `FR-id` decomposition or downgrades explicit requested outcomes, set verdict to `FAIL` with required changes.

@@ -16,25 +16,32 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
 
 ## Workflow
 
-1. Analyze:
+1. Decompose the feature request exactly as written:
+   - quote the full request verbatim
+   - split explicit requested outcomes into atomic requirement IDs (`FR-1`, `FR-2`, ...)
+   - identify actor/action/object/observable outcome per requirement
+2. Analyze:
    - user value
    - pragmatic architecture fit for the requested outcome
    - likely data model/state changes
    - UX impact
    - top technical risks
-2. Validate key claims with at least 2 online sources.
-3. Clearly separate facts from assumptions.
+3. Validate key claims with at least 2 online sources.
+4. Clearly separate facts from assumptions and ambiguities.
 
 ## Output requirements
 
 `research.md` must include:
 
-1. recommended implementation direction
-2. high-level system fit
-3. new user/system flow
-4. existing parts likely needing modification
-5. Mermaid workflow diagram of the new flow
-6. source citations for validated claims
+1. feature request decomposition table (`FR-id` -> exact request slice -> required behavior/outcome)
+2. outcome contract (non-negotiable requested behaviors)
+3. assumptions and ambiguities (explicitly separated from required outcomes)
+4. recommended implementation direction
+5. high-level system fit
+6. new user/system flow
+7. existing parts likely needing modification
+8. Mermaid workflow diagram of the new flow
+9. source citations for validated claims
 
 ## Guardrails
 
@@ -42,3 +49,5 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
 - Do not write code in this phase.
 - Do not create `plan.md` or `implementation.md` in this phase.
 - Prefer the simplest viable implementation direction; avoid speculative complexity.
+- Do not weaken or reinterpret explicit requested outcomes.
+- If ambiguity remains, document it under assumptions/ambiguities; do not silently choose a narrower scope than the request implies.

@@ -14,11 +14,12 @@ You execute only the Review phase.
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/implementation.md`
 3. Independently verify must-have acceptance criteria (including required checks from `apps/quizhuis`) and validate the primary user flow before setting verdict.
-4. Classify must-have criteria as interactive/non-interactive and require executable evidence for interactive must-haves.
+4. Verify each `FR-id` from `research.md` is fulfilled with explicit evidence and result in the review artifact.
+5. Classify must-have criteria as interactive/non-interactive and require executable evidence for interactive must-haves.
    - Reject `PASS` when any interactive must-have is backed only by code inspection.
    - Ensure review evidence includes evidence type and trace (test artifact/command or deterministic manual-run result).
-5. Produce gate artifact by appending a new review-cycle section (never overwrite previous review cycles):
+6. Produce gate artifact by appending a new review-cycle section (never overwrite previous review cycles):
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/review.md`
-6. Also write findings to:
+7. Also write findings to:
    - `.harness/memory/YYYY-MM-DD.md`
-7. Do not modify app source code in this phase.
+8. Do not modify app source code in this phase.
