@@ -57,7 +57,7 @@ Required outputs per feature:
 4. Stop and report blockers if a phase cannot proceed.
 5. Return concise final status with phase outcomes, artifact paths, and blockers (if any).
 6. Validate artifact completeness before advancing:
-   - `research.md` contains feature request decomposition (`FR-id` coverage) and explicit outcome contract.
+   - `research.md` contains feature request decomposition (`FR-id` coverage), explicit outcome contract, capability coverage contract (`FR-id` -> implementation direction -> verification intent), and rejected implementation options mapped to unmet `FR-id` values.
    - the latest appended design-review-cycle section in `design-review.md` contains explicit PASS/FAIL gate, request-coverage matrix, and required changes.
    - `plan.md` contains feature coverage matrix (`FR-id` -> planned tasks -> verification evidence).
    - `implementation.md` contains acceptance-criteria verification evidence with evidence types and traces.
@@ -71,3 +71,4 @@ Required outputs per feature:
 13. Reject/loop review outputs that do not use append-only review-cycle formatting (`## Review Cycle: <ISO-8601 timestamp>`).
 14. Reject/loop when any `FR-id` in `research.md` is missing from `plan.md` feature coverage matrix.
 15. Reject/loop review outputs that mark `PASS` while any `FR-id` in the request-fulfillment matrix is missing or not `PASS`.
+16. Reject/loop when research/design artifacts downscope explicit requested outcomes due effort/complexity or defer required capability to later phases without explicit user request.

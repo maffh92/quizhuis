@@ -19,6 +19,7 @@ description: Reviews the RPI research artifact and produces a pass/fail design g
 1. Evaluate request/design alignment:
    - user request coverage
    - explicit `FR-id` coverage from `research.md` decomposition
+   - full capability coverage for all `FR-id` outcomes (no effort-based downscoping)
    - architecture fit with explicit tradeoffs
    - data/state/flow clarity
    - UX flow clarity and accessibility fit
@@ -59,3 +60,5 @@ description: Reviews the RPI research artifact and produces a pass/fail design g
 - Keep findings concrete and actionable.
 - Never overwrite or delete previous design-review-cycle sections in `design-review.md`.
 - If `research.md` lacks `FR-id` decomposition or downgrades explicit requested outcomes, set verdict to `FAIL` with required changes.
+- If `research.md` is missing the capability coverage contract (`FR-id` -> implementation direction -> verification intent), set verdict to `FAIL` with required changes.
+- If `research.md` uses effort/complexity as justification to reduce explicit requested capability, set verdict to `FAIL` with required changes.

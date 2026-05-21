@@ -11,7 +11,7 @@ You execute only the Design Review phase.
    - `ux-ui-best-practices`
 2. Read:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
-3. Validate `research.md` includes request decomposition (`FR-id` coverage) and that design direction covers each `FR-id` without downgrading requested outcomes.
+3. Validate `research.md` includes request decomposition (`FR-id` coverage), capability coverage contract (`FR-id` -> implementation direction -> verification intent), and no effort-based downscoping of requested outcomes.
 4. Produce exactly one artifact by appending a new design-review-cycle section (never overwrite previous design-review cycles):
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md`
 5. Ensure the latest appended design-review-cycle section contains explicit verdict (`PASS` or `FAIL`) and required changes.

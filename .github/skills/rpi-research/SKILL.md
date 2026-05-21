@@ -28,6 +28,7 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
    - top technical risks
 3. Validate key claims with at least 2 online sources.
 4. Clearly separate facts from assumptions and ambiguities.
+5. Evaluate implementation methods and keep researching alternatives until at least one direction satisfies all `FR-id` outcomes end-to-end.
 
 ## Output requirements
 
@@ -42,13 +43,19 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
 7. existing parts likely needing modification
 8. Mermaid workflow diagram of the new flow
 9. source citations for validated claims
+10. capability coverage contract (`FR-id` -> implementation direction -> verification intent)
+11. rejected implementation options (`option` -> unmet `FR-id` -> rejection reason)
 
 ## Guardrails
 
 - Do not ask for `FEATURE_REQUEST` / `FEATURE_FOLDER` again.
 - Do not write code in this phase.
 - Do not create `plan.md` or `implementation.md` in this phase.
-- Prefer the simplest viable implementation direction; avoid speculative complexity.
+- Treat every `FR-id` as non-negotiable requested capability.
+- Prefer the least complex approach that still fully delivers all explicit requested outcomes.
+- Do not downscope to MVP/phased/later scope unless explicitly requested in `FEATURE_REQUEST`.
+- Never reduce requested capability due to effort, complexity, or current architecture limits.
 - Do not weaken or reinterpret explicit requested outcomes.
 - If ambiguity remains, document it under assumptions/ambiguities; do not silently choose a narrower scope than the request implies.
+- If any candidate direction fails one or more `FR-id` outcomes, continue researching alternatives and adjust architecture/method until full coverage is achieved.
 - Explicitly choose an architecture direction that satisfies requested outcomes now and avoids dead-end choices for likely future expansion.

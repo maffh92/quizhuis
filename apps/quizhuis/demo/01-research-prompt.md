@@ -25,6 +25,10 @@ Analyze:
 - UX impact
 - top technical risks
 
+Treat all explicit requested outcomes as non-negotiable.
+Do not downscope to MVP/phased/later delivery unless the feature request explicitly asks for that.
+If a candidate approach cannot satisfy all requested outcomes, continue researching better methods until full coverage is achieved.
+
 Validate key claims with at least 2 online sources and clearly separate facts from assumptions.
 
 Deliver all research output as exactly one Markdown document at:
@@ -36,6 +40,8 @@ The document must include:
 3. new user/system flow
 4. existing parts likely needing modification
 5. Mermaid workflow diagram of the new flow
+6. capability coverage contract (`FR-id` -> implementation direction -> verification intent)
+7. rejected implementation options (`option` -> unmet `FR-id` -> rejection reason)
 
 Output rules:
 - Use one document only (do not split output across multiple files)
