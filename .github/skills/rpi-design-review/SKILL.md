@@ -18,7 +18,7 @@ description: Reviews the RPI research artifact and produces a pass/fail design g
 
 1. Evaluate request/design alignment:
    - user request coverage
-   - architecture fit (frontend-only constraints)
+   - architecture fit with pragmatic tradeoffs
    - data/state/flow clarity
    - UX flow clarity and accessibility fit
    - risk realism and mitigation

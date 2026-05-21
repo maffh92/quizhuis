@@ -18,7 +18,7 @@ description: Executes the Research phase of the QuizHuis RPI feature workflow an
 
 1. Analyze:
    - user value
-   - fit with the current frontend-only architecture
+   - pragmatic architecture fit for the requested outcome
    - likely data model/state changes
    - UX impact
    - top technical risks
