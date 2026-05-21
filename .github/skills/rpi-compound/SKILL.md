@@ -8,8 +8,8 @@ description: Runs the compounding step after review PASS, deciding whether repos
 ## Quick start
 
 1. Receive orchestrator inputs (`FEATURE_FOLDER`, memory file path/date).
-2. Read `apps/quizhuis/demo/<FEATURE_FOLDER>/review.md`.
-3. Confirm review verdict is `PASS`.
+2. Read `apps/quizhuis/demo/<FEATURE_FOLDER>/review.md` and identify the latest appended review-cycle section.
+3. Confirm the latest review-cycle verdict is `PASS`.
 4. Read the feature review entry in `.harness/memory/YYYY-MM-DD.md`.
 5. Invoke `software-development-best-practices` and keep documentation guidance aligned with KISS, minimalistic code, and clean code principles.
 6. Decide whether docs must be updated.
@@ -46,7 +46,7 @@ Update documentation when review findings include:
 
 ## Guardrails
 
-- If `review.md` verdict is `FAIL`, stop and route back to `rpi.implement`.
+- If the latest review-cycle verdict in `review.md` is `FAIL`, stop and route back to `rpi.implement`.
 - If docs are updated, keep edits scoped and precise.
 - Do not make unrelated code changes.
 - Preserve alignment with `documentation-writing-consistency` conventions.

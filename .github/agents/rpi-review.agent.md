@@ -13,8 +13,9 @@ You execute only the Review phase.
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md`
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/implementation.md`
-3. Produce gate artifact:
+3. Independently verify must-have acceptance criteria (including required checks from `apps/quizhuis`) and validate the primary user flow before setting verdict.
+4. Produce gate artifact by appending a new review-cycle section (never overwrite previous review cycles):
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/review.md`
-4. Also write findings to:
+5. Also write findings to:
    - `.harness/memory/YYYY-MM-DD.md`
-5. Do not modify app source code in this phase.
+6. Do not modify app source code in this phase.

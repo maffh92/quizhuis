@@ -11,9 +11,10 @@ description: Executes the Implement phase from approved research/design/plan art
 2. Parse `FEATURE_REQUEST` and `FEATURE_FOLDER`.
 3. Read:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
-   - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md`
+   - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md` (use the latest appended design-review-cycle section)
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
-4. Confirm `design-review.md` verdict is `PASS`.
+   - `apps/quizhuis/demo/<FEATURE_FOLDER>/review.md` (if present from a previous failed review cycle; use the latest appended review-cycle section)
+4. Confirm the latest design-review-cycle verdict in `design-review.md` is `PASS`.
 5. Invoke `software-development-best-practices` and apply KISS, minimalistic code, and clean code principles during implementation.
 6. Invoke `test-best-practices` and apply behavior-first verification strategy.
 7. Implement the feature in the app codebase.
@@ -31,6 +32,9 @@ description: Executes the Implement phase from approved research/design/plan art
 - Run project quality checks from `apps/quizhuis` (`npm run lint && npm run test && npm run build`) before concluding implementation.
 - Map each acceptance criterion to verification evidence (automated or manual).
 - Validate the primary user flow manually when automation does not fully cover it.
+- When `review.md` exists with latest review-cycle verdict `FAIL`, treat listed required fixes from that latest cycle as mandatory in-scope work for this iteration.
+- Preserve all previously satisfied must-have acceptance criteria while addressing review fixes.
+- Keep verification evidence current for every must-have criterion in every iteration (including unchanged behavior).
 
 ## Output requirements
 
@@ -42,6 +46,7 @@ description: Executes the Implement phase from approved research/design/plan art
 4. behavior changes and user impact
 5. test/build results
 6. remaining risks, limitations, or deferred items
+7. review-loop reconciliation (if applicable): required fixes from the latest review cycle in `review.md` -> resolution status -> evidence
 
 ## Guardrails
 
@@ -49,3 +54,4 @@ description: Executes the Implement phase from approved research/design/plan art
 - Implement only the approved plan scope unless explicitly expanded.
 - If complexity grows beyond what the request needs, simplify before continuing.
 - If any must-have acceptance criterion is unmet, do not report the phase as complete; list blockers and required fixes.
+- If review-driven rework regresses a previously passing must-have criterion, report `FAIL` and list the regression explicitly.

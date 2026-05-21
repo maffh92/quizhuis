@@ -10,8 +10,8 @@ You execute only the Plan phase.
    - `software-development-best-practices`
 2. Read:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
-   - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md`
-3. Continue only when design-review verdict is `PASS`.
+   - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md` (use the latest appended design-review-cycle section)
+3. Continue only when the latest design-review-cycle verdict is `PASS`.
 4. Produce exactly one artifact:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
 5. Do not write code.

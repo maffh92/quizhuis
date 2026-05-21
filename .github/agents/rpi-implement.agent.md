@@ -11,10 +11,11 @@ You execute only the Implement phase.
    - `test-best-practices`
 2. Read:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
-   - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md`
+   - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md` (use the latest appended design-review-cycle section)
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`
-3. Continue only when design-review verdict is `PASS`.
-4. Implement the approved plan scope and run required checks.
+   - `apps/quizhuis/demo/<FEATURE_FOLDER>/review.md` (if present from a prior failed review; use the latest appended review-cycle section)
+3. Continue only when the latest design-review-cycle verdict is `PASS`.
+4. Implement the approved plan scope (plus required fixes from the latest failed review cycle when present), preserve previously satisfied must-have criteria, and run required checks.
 5. Produce exactly one artifact:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/implementation.md`
-6. If must-have acceptance criteria are unmet, return `FAIL` with required fixes.
+6. If must-have acceptance criteria are unmet or regress after rework, return `FAIL` with required fixes.

@@ -13,11 +13,11 @@
 
 - **[rpi-orchestrator](./rpi-orchestrator/SKILL.md)** — Main-orchestrator skill that spawns phase agents, enforces gates, and loops on FAIL verdicts until the flow is complete.
 - **[rpi-research](./rpi-research/SKILL.md)** — Research phase for feature requests, producing `research.md` with validated claims and system fit.
-- **[rpi-design-review](./rpi-design-review/SKILL.md)** — Design gate after research, producing `design-review.md` with PASS/FAIL and required simplifications before planning.
+- **[rpi-design-review](./rpi-design-review/SKILL.md)** — Design gate after research with append-only cycle history in `design-review.md`; latest cycle decides PASS/FAIL before planning.
 - **[rpi-plan](./rpi-plan/SKILL.md)** — Planning phase for feature requests, producing `plan.md` from research artifacts.
-- **[rpi-implement](./rpi-implement/SKILL.md)** — Implementation phase for feature requests, producing code changes and an `implementation.md` verification report.
-- **[rpi-review](./rpi-review/SKILL.md)** — Review gate that produces `review.md` (`PASS`/`FAIL`) and records findings in harness memory.
-- **[rpi-compound](./rpi-compound/SKILL.md)** — Runs only after review `PASS`, then decides/executes repository documentation updates from review findings.
+- **[rpi-implement](./rpi-implement/SKILL.md)** — Implementation phase for feature requests, producing code changes plus an `implementation.md` report with must-have verification and review-loop reconciliation.
+- **[rpi-review](./rpi-review/SKILL.md)** — Review gate with independent must-have verification and append-only cycle history in `review.md`; records findings in harness memory.
+- **[rpi-compound](./rpi-compound/SKILL.md)** — Runs only after the latest review-cycle verdict is `PASS`, then decides/executes repository documentation updates from review findings.
 
 ## Existing workflow skills
 
