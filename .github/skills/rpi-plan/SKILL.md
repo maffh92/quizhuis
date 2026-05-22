@@ -13,8 +13,9 @@ description: Executes the Plan phase of the QuizHuis RPI feature workflow and pr
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md` (use the latest appended design-review-cycle section)
 4. Confirm the latest design-review-cycle verdict in `design-review.md` is `PASS`.
-5. Invoke `software-development-best-practices` and apply KISS, minimalistic code, and clean code principles to the plan.
-6. Produce exactly one file: `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`.
+5. Confirm explicit user approval of that latest `PASS` design-review cycle from orchestrator context before planning.
+6. Invoke `software-development-best-practices` and apply KISS, minimalistic code, and clean code principles to the plan.
+7. Produce exactly one file: `apps/quizhuis/demo/<FEATURE_FOLDER>/plan.md`.
 
 ## Workflow
 
@@ -46,3 +47,4 @@ Use manual-only verification for interactive must-haves only when automation is 
 - Every `FR-id` from `research.md` must be mapped in the feature coverage matrix before planning can pass.
 - Do not introduce scope that is not traceable to request decomposition, required fixes, or explicit risk mitigation.
 - If the latest design-review-cycle verdict in `design-review.md` is `FAIL`, stop and route back to `rpi.research` with required changes.
+- If explicit user approval of the latest `PASS` design-review cycle is missing, stop and return to orchestrator for approval gating.

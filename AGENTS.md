@@ -33,6 +33,7 @@ Use dedicated skills for project behavior and conventions:
 - Orchestration contract is defined in `.github/skills/rpi-orchestrator/SKILL.md`:
   - phase agent profiles (`.github/agents/rpi-*.agent.md`)
   - strict phase order
+  - explicit user design-approval checkpoint after design-review PASS
   - required gate artifacts
   - loop rules on `FAIL`
   - runtime rules for `/tasks`

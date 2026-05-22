@@ -48,8 +48,9 @@ description: Reviews the RPI research artifact and produces a pass/fail design g
    5. blocking issues (if any)
    6. required changes before planning
    7. complexity reduction recommendations
-   8. next-step instruction:
-      - `PASS` -> proceed to `rpi.plan`
+   8. user-approval packet (short decision summary + explicit approval question for the orchestrator checkpoint)
+   9. next-step instruction:
+      - `PASS` -> await explicit user design approval, then proceed to `rpi.plan`
       - `FAIL` -> return to `rpi.research` with listed required changes
 4. The latest appended design-review-cycle section is the source of truth for planning/orchestration decisions.
 

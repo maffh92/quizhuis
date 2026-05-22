@@ -12,7 +12,8 @@ You execute only the Design Review phase.
 2. Read:
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/research.md`
 3. Validate `research.md` includes request decomposition (`FR-id` coverage), capability coverage contract (`FR-id` -> implementation direction -> verification intent), and no effort-based downscoping of requested outcomes.
-4. Produce exactly one artifact by appending a new design-review-cycle section (never overwrite previous design-review cycles):
+4. Include a user-approval packet in the appended design-review cycle so orchestrator can request explicit user approval before planning.
+5. Produce exactly one artifact by appending a new design-review-cycle section (never overwrite previous design-review cycles):
    - `apps/quizhuis/demo/<FEATURE_FOLDER>/design-review.md`
-5. Ensure the latest appended design-review-cycle section contains explicit verdict (`PASS` or `FAIL`) and required changes.
-6. Do not write code.
+6. Ensure the latest appended design-review-cycle section contains explicit verdict (`PASS` or `FAIL`) and required changes.
+7. Do not write code.
