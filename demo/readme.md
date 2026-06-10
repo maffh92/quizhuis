@@ -16,9 +16,9 @@ To try your own feature, edit `FEATURE_REQUEST` and `FEATURE_FOLDER` in that fil
 
 Each phase is a skill. Run them in sequence:
 
-1. **Research**: Use the `rpi.research` skill — produces `demo/<FEATURE_FOLDER>/research.md`
-2. **Plan**: Use the `rpi.plan` skill — produces `demo/<FEATURE_FOLDER>/plan.md`
-3. **Implement**: Use the `rpi.implement` skill — produces `demo/<FEATURE_FOLDER>/implementation.md`
+1. **Research**: Use the `rpi-research` skill — produces `demo/<FEATURE_FOLDER>/research.md`
+2. **Plan**: Use the `rpi-plan` skill — produces `demo/<FEATURE_FOLDER>/plan.md`
+3. **Implement**: Use the `rpi-implement` skill — produces `demo/<FEATURE_FOLDER>/implementation.md`
 
 ## Output convention (repeatable per feature)
 

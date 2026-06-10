@@ -1,5 +1,5 @@
 ---
-name: rpi.implement
+name: rpi-implement
 description: Executes the Implement phase from approved research and plan artifacts. Use when planning is complete and coding should begin.
 ---
 

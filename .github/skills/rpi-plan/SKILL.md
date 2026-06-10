@@ -1,5 +1,5 @@
 ---
-name: rpi.plan
+name: rpi-plan
 description: Executes the Plan phase of the QuizHuis RPI flow. Use when research is complete and an execution plan is needed before coding.
 ---
 

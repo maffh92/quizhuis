@@ -1,5 +1,5 @@
 ---
-name: rpi.research
+name: rpi-research
 description: Executes the Research phase of the QuizHuis RPI flow. Use when a feature request needs discovery and system-fit analysis before planning.
 ---
 
